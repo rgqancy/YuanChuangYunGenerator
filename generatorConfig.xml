@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <!-- 引入配置文件 -->
+  <!-- <properties resource="init.properties"/>  -->
+
+  <!-- 指定数据连接驱动jar地址 -->
+  <!-- <classPathEntry location="${classPath}" />  -->
+  <classPathEntry location="lib\mysql-connector-5.1.8.jar" />
+
+  <context id="MYSQLTables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://192.168.1.16:3306/libra?useUnicode=true&amp;characterEnhcoding=utf-8"
+        userId="libra"
+        password="libra">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.yuanchuangyun.libra.model" targetProject="src\main\java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="com.yuanchuangyun.libra.xml"  targetProject="src\main\java">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.yuanchuangyun.libra.dao"  targetProject="src\main\java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <table schema="libra" tableName="base_config" domainObjectName="BaseConfig" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false">
+      <!--
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="ID" sqlStatement="MYSQL" identity="true" />
+      <columnOverride column="DATE_FIELD" property="startDate" />
+      <ignoreColumn column="FRED" />
+      <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
+	  -->
+    </table>
+
+	<table schema="libra" tableName="base_department" domainObjectName="BaseDepartment" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="base_dict_type" domainObjectName="BaseDictType" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="base_dict_value" domainObjectName="BaseDictValue" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="base_permission" domainObjectName="BasePermission" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="base_permission_resource_rel" domainObjectName="BasePermissionResourceRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="base_resource" domainObjectName="BaseResource" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="base_role" domainObjectName="BaseRole" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="base_role_permission_rel" domainObjectName="BaseRolePermissionRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="base_tag" domainObjectName="BaseTag" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="base_user" domainObjectName="BaseUser" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="base_user_role_rel" domainObjectName="BaseUserRoleRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="base_user_tag_rel" domainObjectName="BaseUserTagRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_agency" domainObjectName="BizAgency" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_applicant" domainObjectName="BizApplicant" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_asic_applicant_rel" domainObjectName="BizAsicApplicantRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_attach" domainObjectName="BizAttach" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_case" domainObjectName="BizCase" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_contract" domainObjectName="BizContract" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_copyright_applicant_rel" domainObjectName="BizCopyrightApplicantRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_country" domainObjectName="BizCountry" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_customer" domainObjectName="BizCustomer" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_equivalent" domainObjectName="BizEquivalent" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_equivalent_apply_number" domainObjectName="BizEquivalentApplyNumber" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_file_model" domainObjectName="BizFileModel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_inventor" domainObjectName="BizInventor" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_invoice" domainObjectName="BizInvoice" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_lawstate" domainObjectName="BizLawstate" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_linkman" domainObjectName="BizLinkman" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_linkway" domainObjectName="BizLinkway" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_menu" domainObjectName="BizMenu" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_object_asic" domainObjectName="BizObjectAsic" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_object_consult" domainObjectName="BizObjectConsult" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_object_copyright" domainObjectName="BizObjectCopyright" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_object_cr" domainObjectName="BizObjectCr" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_object_group" domainObjectName="BizObjectGroup" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_object_manage" domainObjectName="BizObjectManage" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_object_patent" domainObjectName="BizObjectPatent" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_object_trademark" domainObjectName="BizObjectTrademark" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_patent_applicant_rel" domainObjectName="BizPatentApplicantRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_patent_specified_country" domainObjectName="BizPatentSpecifiedCountry" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_pay_ask" domainObjectName="BizPayAsk" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_pay_ruler" domainObjectName="BizPayRuler" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_priority_info" domainObjectName="BizPriorityInfo" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_priority_person" domainObjectName="BizPriorityPerson" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_project" domainObjectName="BizProject" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_project_agency_rel" domainObjectName="BizProjectAgencyRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_style" domainObjectName="BizStyle" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_tech_linkman" domainObjectName="BizTechLinkman" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_track" domainObjectName="BizTrack" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_trademark_applicant_rel" domainObjectName="BizTrademarkApplicantRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_trademark_specified_country" domainObjectName="BizTrademarkSpecifiedCountry" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="biz_user_files" domainObjectName="BizUserFiles" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="pf_dict" domainObjectName="PfDict" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="pf_permission" domainObjectName="PfPermission" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="pf_resource" domainObjectName="PfResource" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="pf_resource_permission_rel" domainObjectName="PfResourcePermissionRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="pf_role" domainObjectName="PfRole" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="pf_role_permission_rel" domainObjectName="PfRolePermissionRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="pf_user" domainObjectName="PfUser" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	<table schema="libra" tableName="pf_user_role_rel" domainObjectName="PfUserRoleRel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+  </context>
+</generatorConfiguration>
